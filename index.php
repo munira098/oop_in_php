@@ -1,36 +1,41 @@
 <?php
-
-//declare class
-class person{
-    public $name;
-    public $age;
-    public $phoneNmumber;
-    public function nationality(){
-        echo $this->name. ' is bangladeshi';
-    }
+// Parent class
+abstract class person {
+  public $name;
+  public function __construct($name) {
+    $this->name = $name;
+  }
+  abstract public function intro() : string; 
 }
 
-//echo "  task one... ";
-//decarle object
-$personone = new person();
-$persontwo = new person();
-$personone->name='abc';
+// Child classes
+class kamal extends person {
+  public function intro() : string {
+    return "hello! I'm an $this->name!"; 
+  }
+}
 
-$personone->age='24';
-$personone->phoneNmumber='013839';
-$personone->nationality();
-$persontwo->name='lkl';
-$persontwo->age='33';
-$persontwo->phoneNmumber='246755';
-//echo $persontwo->name;
-//echo '<br>';
+class mini extends person {
+  public function intro() : string {
+    return "hi everyone! I'm a $this->name!"; 
+  }
+}
 
-echo $personone->name;
+class mina extends person {
+  public function intro() : string {
+    return "hlw ! I'm a $this->name!"; 
+  }
+}
 
-echo $persontwo->age;
-//print_r($personone);
-//rint_r($persontwo);
+// Create objects from the child classes
+$kamal = new kamal("kamal");
+echo $kamal->intro();
+echo "<br>";
 
+$mini = new mini("mini");
+echo $mini->intro();
+echo "<br>";
 
-
-?> 
+$mina = new mina("mina");
+echo $mina->intro();
+?>
