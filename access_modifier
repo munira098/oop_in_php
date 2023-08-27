@@ -1,0 +1,49 @@
+<?php
+class person{
+    //public $name="abc";
+    //public $age="26";
+    //protected $location="ctg";
+    //private $region="islam";
+    //function for access protected ,private modeifier 
+    //public function info(){
+       // echo $this->name;
+       // echo $this->age;
+        //echo $this->location;
+       // echo $this->region;
+    //}
+
+    //methods
+       public function one()
+       {
+        echo "this is public method";
+       }
+
+       protected function two(){
+        echo "this is protected method";
+
+
+       }
+       private function three(){
+        echo "this is private method";
+       }
+    
+
+}
+$person1= new person();
+//$person1->name="abc <br>";
+  //$person1->age='22';
+$person1->one();
+$person1->three();
+
+//echo $person1->name;
+//echo $person1->age;
+//$person1->location='ctg';
+//$person1->region='islam';
+
+//$person1->info();
+
+
+//echo $person1->location;//show error
+//echo $person1->region;//error
+
+?> 
